@@ -40,20 +40,29 @@ lost mid-update, the controller simply keeps running the **old** firmware —
 
 ## Recovery — if the controller won't boot or update
 
-If a firmware ever boots into a broken state (rare — only possible from a bad
-build, not from an interrupted download), recover it with the **UF2 drag-and-drop**
-method. No toolchain required.
+Rare — only possible from a genuinely broken firmware build, never from an
+interrupted download. Recovery uses the controller's built-in **USB drive**
+(drag a recovery file onto it). **No buttons to press, no toolchain required.**
+
+**Step 1 — get the controller into Recovery (USB drive) mode.** One of:
+
+- **If the web page still works:** open the **Firmware** tab and click
+  **Enter Recovery Mode (USB drive)**. The controller reboots into the drive.
+- **If it won't boot at all (keeps restarting):** the controller detects the
+  restart loop and drops into Recovery mode **on its own** after a few failed
+  starts — just leave it powered and connected via USB and wait ~30 seconds.
+
+**Step 2 — restore the firmware.**
 
 1. Download the latest `firmware-recovery-X.Y.uf2` from [Releases](../../releases).
-2. Connect the controller to your computer with a **USB cable**.
-3. **Double-press the RESET button** (two quick presses). A USB drive named
-   something like **`FTHRS3BOOT`** appears.
-4. **Drag `firmware-recovery-X.Y.uf2` onto that drive.**
-5. The drive copies the image, the controller reboots automatically into the
-   restored firmware, and the drive disappears.
+2. With the controller connected via **USB**, a drive named **`FTHRS3BOOT`** appears.
+3. **Drag `firmware-recovery-X.Y.uf2` onto that drive** (use Windows Explorer /
+   macOS Finder — a normal drag-and-drop copy).
+4. The controller flashes it, reboots into the restored firmware, and the drive
+   disappears.
 
-That image is a complete restore (bootloader, partitions, and application), so it
-recovers the device to a known-good state.
+**To cancel** (back out without restoring): just **power-cycle** the controller
+(unplug power briefly and plug back in). It boots its existing firmware.
 
 > Tip: keep a copy of the recovery `.uf2` on your computer so it's ready if ever
 > needed.
