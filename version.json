@@ -1,5 +1,5 @@
 {
-    "version":  "1.6",
+    "version":  "1.7",
     "url":  "https://raw.githubusercontent.com/shs101/W1SHS_RotatorControl-firmware/main/firmware/firmware.bin",
-    "notes":  "Firmware 1.6"
+    "notes":  "Web + TFT readability improvements and firmware-update indicators: header \u0027update available\u0027 badge (web UI), cached manifest check for faster page loads, TFT header redesign with centered title/version and \u0027Update Available\u0027 line, darkened faint helper text, camera placeholder fixes. Recovery kit docs now cover first-time provisioning of a blank same-model board."
 }
