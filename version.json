@@ -1,5 +1,5 @@
 {
-    "version":  "1.9",
+    "version":  "2.0",
     "url":  "https://raw.githubusercontent.com/shs101/W1SHS_RotatorControl-firmware/main/firmware/firmware.bin",
-    "notes":  "Auto-park: park the antenna automatically when satellite tracking is turned off and left off (configurable delay, default 30s, 0=off; excludes stall/wire-wrap/emergency-stop). New MIT license."
+    "notes":  "2.0 - absolute encoder model. Position now comes from PCNT hardware quadrature counting plus a slowly corrected offset from MCPWM capture of the absolute pulse, instead of quadrature interrupts corrected by a twice-a-second pulseIn. Opt-in via the enc_model setting; legacy remains the default and the automatic fallback if capture or PCNT fail to start. Also in this build: RFI storm guard, wrong-way guard, fail-closed absolute staleness, hardware-timer step generation for steppers, and the stall-detection minimum-speed fix."
 }
