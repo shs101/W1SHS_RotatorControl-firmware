@@ -1,5 +1,5 @@
 {
-    "version":  "2.0",
+    "version":  "2.1",
     "url":  "https://raw.githubusercontent.com/shs101/W1SHS_RotatorControl-firmware/main/firmware/firmware.bin",
-    "notes":  "2.0 - absolute encoder model. Position now comes from PCNT hardware quadrature counting plus a slowly corrected offset from MCPWM capture of the absolute pulse, instead of quadrature interrupts corrected by a twice-a-second pulseIn. Opt-in via the enc_model setting; legacy remains the default and the automatic fallback if capture or PCNT fail to start. Also in this build: RFI storm guard, wrong-way guard, fail-closed absolute staleness, hardware-timer step generation for steppers, and the stall-detection minimum-speed fix."
+    "notes":  "2.1 - servo power failsafe: the servos stay powered only while the controller is alive, so a crash or reset cuts their power instead of leaving them running, and a deliberate stop also cuts it (a limit stop does not). Requires the failsafe circuit, which is on the base board. Also: the dashboard warns when it is showing a stale snapshot; the update badge no longer offers the version already installed; a dead quadrature channel is now named; defaults match the base board (absolute encoder pins 8/17, display rotation 3). Same firmware for base board v1.1 and the planned v1.2."
 }
